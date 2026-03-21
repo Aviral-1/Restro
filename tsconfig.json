@@ -1,0 +1,11 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./packages/types" },
+    { "path": "./packages/utils" },
+    { "path": "./backend/nest-api" },
+    { "path": "./apps/customer-app" },
+    { "path": "./apps/admin-dashboard" },
+    { "path": "./apps/delivery-app" }
+  ]
+}

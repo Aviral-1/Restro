@@ -1,0 +1,30 @@
+{
+  "name": "restro-qr-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "QR Code Restaurant Ordering & Delivery Tracking SaaS Platform",
+  "workspaces": [
+    "packages/*",
+    "backend/*",
+    "apps/*",
+    "apps/platform-admin"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,customer,admin,delivery,platform-admin -c blue,green,yellow,magenta,cyan \"npm run dev:api\" \"npm run dev:customer\" \"npm run dev:admin\" \"npm run dev:delivery\" \"npm run dev:platform-admin\"",
+    "dev:api": "npm run dev --workspace=backend/nest-api",
+    "dev:customer": "npm run dev --workspace=apps/customer-app",
+    "dev:admin": "npm run dev --workspace=apps/admin-dashboard",
+    "dev:delivery": "npm run dev --workspace=apps/delivery-app",
+    "dev:platform-admin": "npm run dev --workspace=apps/platform-admin",
+    "build": "npm run build --workspaces --if-present",
+    "seed": "npm run seed --workspace=backend/nest-api",
+    "lint": "npm run lint --workspaces --if-present"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

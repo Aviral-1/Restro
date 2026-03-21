@@ -1,0 +1,106 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:7
+    container_name: restro-mongodb
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - restro-network
+
+  redis:
+    image: redis:7-alpine
+    container_name: restro-redis
+    ports:
+      - '6379:6379'
+    networks:
+      - restro-network
+
+  nest-api:
+    build:
+      context: ./backend/nest-api
+      dockerfile: Dockerfile
+    container_name: restro-api
+    ports:
+      - '4000:4000'
+    environment:
+      - DATABASE_URL=mongodb://mongodb:27017/restro-qr
+      - REDIS_URL=redis://redis:6379
+      - JWT_SECRET=your-super-secret-jwt-key
+      - RAZORPAY_KEY_ID=rzp_test_demo
+      - RAZORPAY_KEY_SECRET=demo_secret
+      - API_PORT=4000
+      - CUSTOMER_APP_URL=http://localhost:3000
+      - ADMIN_APP_URL=http://localhost:3001
+      - DELIVERY_APP_URL=http://localhost:3002
+    depends_on:
+      - mongodb
+      - redis
+    networks:
+      - restro-network
+
+  customer-app:
+    build:
+      context: ./apps/customer-app
+      dockerfile: Dockerfile
+    container_name: restro-customer
+    ports:
+      - '3000:3000'
+    environment:
+      - API_URL=http://nest-api:4000/api
+    depends_on:
+      - nest-api
+    networks:
+      - restro-network
+
+  admin-dashboard:
+    build:
+      context: ./apps/admin-dashboard
+      dockerfile: Dockerfile
+    container_name: restro-admin
+    ports:
+      - '3001:3001'
+    environment:
+      - API_URL=http://nest-api:4000/api
+    depends_on:
+      - nest-api
+    networks:
+      - restro-network
+
+  delivery-app:
+    build:
+      context: ./apps/delivery-app
+      dockerfile: Dockerfile
+    container_name: restro-delivery
+    ports:
+      - '3002:3002'
+    environment:
+      - API_URL=http://nest-api:4000/api
+    depends_on:
+      - nest-api
+    networks:
+      - restro-network
+
+  platform-admin:
+    build:
+      context: ./apps/platform-admin
+      dockerfile: Dockerfile
+    container_name: restro-platform
+    ports:
+      - '3003:3003'
+    environment:
+      - API_URL=http://nest-api:4000/api
+    depends_on:
+      - nest-api
+    networks:
+      - restro-network
+
+volumes:
+  mongo_data:
+
+networks:
+  restro-network:
+    driver: bridge
