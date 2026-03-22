@@ -36,11 +36,11 @@ async function seed() {
     orderModel.deleteMany({}),
     planModel.deleteMany({}),
     // Add other models here if they are to be cleared this way
-    db.dropCollection('tables').catch(() => {}), // Fallback for collections not mapped to models
-    db.dropCollection('payments').catch(() => {}),
-    db.dropCollection('deliverypartners').catch(() => {}),
-    db.dropCollection('trackinglogs').catch(() => {}),
-    db.dropCollection('notifications').catch(() => {}),
+    db.dropCollection('tables').catch(() => { }), // Fallback for collections not mapped to models
+    db.dropCollection('payments').catch(() => { }),
+    db.dropCollection('deliverypartners').catch(() => { }),
+    db.dropCollection('trackinglogs').catch(() => { }),
+    db.dropCollection('notifications').catch(() => { }),
   ]);
 
   console.log('🌱 Seeding Subscription Plans...');
@@ -70,7 +70,7 @@ async function seed() {
       limits: { maxItems: 100000, maxOrders: 100000, maxTables: 1000, hasAnalytics: true, hasCustomBranding: true },
     },
   ]);
-  console.log('✅ Subscription Plans created');
+  console.log('✅ Subscription Plans created sdfgesrged hgdhgdryhd hg');
 
   // === USERS ===
   const hashedPassword = await bcrypt.hash('password123', 12);
