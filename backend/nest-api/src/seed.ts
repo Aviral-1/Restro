@@ -70,7 +70,7 @@ async function seed() {
       limits: { maxItems: 100000, maxOrders: 100000, maxTables: 1000, hasAnalytics: true, hasCustomBranding: true },
     },
   ]);
-  console.log('✅ Subscription Plans created sdfgesrged hgdhgdryhd hg');
+  console.log('✅ Subscription Plans created sdfgesrged hgdhgdryhd hgsdgsadfgsf sdfghsdf gsdfg');
 
   // === USERS ===
   const hashedPassword = await bcrypt.hash('password123', 12);
