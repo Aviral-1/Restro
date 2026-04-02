@@ -16,16 +16,29 @@ import { SuperAdminModule } from './modules/super-admin/super-admin.module';
 @Module({
   imports: [
     MongooseModule.forRootAsync({
-      useFactory: () => ({
-        uri: process.env.DATABASE_URL || 'mongodb://localhost:27017/restro-qr',
-        serverSelectionTimeoutMS: 5000,
-        connectionFactory: (connection) => {
-          connection.on('error', (err: any) => {
-            console.error('❌ MongoDB Connection Error:', err.message);
-          });
-          return connection;
-        },
-      }),
+      useFactory: () => {
+        const uri = process.env.DATABASE_URL || 'mongodb://127.0.0.1:27017/restro-qr';
+        console.log(`🔌 Attempting to connect to MongoDB at: ${uri.replace(/:([^:@]+)@/, ':****@')}`);
+        return {
+          uri,
+          serverSelectionTimeoutMS: 5000,
+          connectionFactory: (connection) => {
+            connection.on('connected', () => {
+              console.log('✅ MongoDB connected successfully');
+            });
+            connection.on('error', (err: any) => {
+              console.error('❌ MongoDB Connection Error:', err.message);
+              if (err.message.includes('ECONNREFUSED')) {
+                console.error('👉 TIP: Ensure MongoDB is running locally or check your DATABASE_URL in .env');
+              }
+            });
+            connection.on('disconnected', () => {
+              console.warn('⚠️ MongoDB disconnected');
+            });
+            return connection;
+          },
+        };
+      },
     }),
     AuthModule,
     RestaurantModule,
