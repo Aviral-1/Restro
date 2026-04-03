@@ -24,7 +24,7 @@ import { SuperAdminModule } from './modules/super-admin/super-admin.module';
           serverSelectionTimeoutMS: 5000,
           connectionFactory: (connection) => {
             connection.on('connected', () => {
-              console.log('✅ MongoDB connected successfully');
+              console.log('✅ MongoDB connected successfully hfkuy fkuyrkuy fu');
             });
             connection.on('error', (err: any) => {
               console.error('❌ MongoDB Connection Error:', err.message);
@@ -54,4 +54,4 @@ import { SuperAdminModule } from './modules/super-admin/super-admin.module';
     SubscriptionModule,
   ],
 })
-export class AppModule {}
+export class AppModule { }
