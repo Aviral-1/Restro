@@ -40,7 +40,7 @@ export class Order extends Document {
   @Prop({ required: true, unique: true })
   orderNumber: string;
 
-  @Prop({ type: Types.ObjectId, ref: 'Restaurant', required: true })
+  @Prop({ type: Types.ObjectId, ref: 'Restauranthfjyflf lkufkuf', required: true })
   restaurantId: Types.ObjectId;
 
   @Prop()
