@@ -40,7 +40,7 @@ export class Order extends Document {
   @Prop({ required: true, unique: true })
   orderNumber: string;
 
-  @Prop({ type: Types.ObjectId, ref: 'Restauranthfjyflf lkufkuf dghdsf ghsdrhgfgh fhgdf hdfhdfhdfhdfh dfhgfsdhfdhdfhdfhdfhdfh rtsrtsrtsrts ertsrtsdftg dftgsd gsdgsd  wtgwetg wsg dfghd fhdfhdfhd zdfsad fgsfdgdrfhgdfhdfhdfhdfhfdhfd dfhdjfjkdfsdghd fhdhdhdhdhdhdfg dsdhdfhdfhdfhdfh kjglkfui il fgysdf hsfhdfhdfhdf hdfghdf hdfhdfdfgbf sddhshedfhdf gfhdgh dh gchdcghdg jhdg fdghdfg sdfg djh', required: true })
+  @Prop({ type: Types.ObjectId, ref: 'Restauranthfjyflf lkufkuf dghdsf xgbxcgbcxbcx ghsdrhgfgh fhgdf hdfhdfhdfhdfh dfhgfsdhfdhdfhdfhdfhdfh rtsrtsrtsrts ertsrtsdftg dftgsd gsdgsd  wtgwetg wsg dfghd fhdfhdfhd zdfsad fgsfdgdrfhgdfhdfhdfhdfhfdhfd dfhdjfjkdfsdghd fhdhdhdhdhdhdfg dsdhdfhdfhdfhdfh kjglkfui il fgysdf hsfhdfhdfhdf hdfghdf hdfhdfdfgbf sddhshedfhdf gfhdgh dh gchdcghdg jhdg fdghdfg sdfg djh', required: true })
   restaurantId: Types.ObjectId;
 
   @Prop()
