@@ -2,4 +2,4 @@
 /// <reference types="next/image-types/global" />
 
 // NOTE: This file should not be edited
-// see https://nextjs.org/docs/app/building-your-application/configuring/typescripthgvkljhkjhkjhkjvksfgsdfghsdf hdfhdfjghkjfhAEUjvkjvkkjvkjvkjvkjvjkvv for more information.
+// see https://nextjs.org/docs/app/building-your-application/configuring/typescripthgvkljhkjhkjhkjvksfgsdfghsdf ghxdfdhg sdfhgsdfghsfyhsfhsfhsfhhdfhdfjghkjfhAEUjvkjvkkjvkjvkjvkjvjkvv for more information.
