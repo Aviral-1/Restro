@@ -2,4 +2,4 @@
 /// <reference types="next/image-types/global" />
 
 // NOTE: This file should not be edited
-// see https://nextjs.org/docs/app/building-your-application/configuring/typescripthgvkljhkjhkjhkjvksfgsdfghsdf ghxdfdhg sdfhgsdfghsfyhsfhsfhsfhhdfhdfjghkjfhAEUjvkjvkfh dshdghdghgdhdghdfhdfhdf dfhgdfhdf fsdgsd sgsdgsdgsdgsgsgsgsgsgsgsgsgsgsgsghdfhdfhdfhfdh dfhdfh dfhdhdhkjvkjvkjvkjvjkvv for more information.
+// see https://nextjs.org/docs/app/building-your-application/configuring/jhfjkfjifjkfrikfikufikufkufgkufgkufgkufgkufgkugttkugtkugkugkugkugkgkgtypescripthgvkljhkjhkjhkjvksfgsdfghsdf ghxdfdhg sdfhgsdfghsfyhsfhsfhsfhhdfhdfjghkjfhAEUjvkjvkfh dshdghdghgdhdghdfhdfhdf dfhgdfhdf fsdgsd sgsdgsdgsdgsgsgsgsgsgsgsgsgsgsgsghdfhdfhdfhfdh dfhdfh dfhdhdhkjvkjvkjvkjvjkvv for more information.
